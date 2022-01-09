@@ -1,0 +1,30 @@
+{
+  "name": "yt-tm-graphql-react-spacex-launches",
+  "version": "1.0.0",
+  "description": "App that lists SpaceX launch missions",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Novailoveyou/yt-tm-graphql-react-spacex-launches.git"
+  },
+  "keywords": [],
+  "author": "novailoveyou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Novailoveyou/yt-tm-graphql-react-spacex-launches/issues"
+  },
+  "homepage": "https://github.com/Novailoveyou/yt-tm-graphql-react-spacex-launches#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
