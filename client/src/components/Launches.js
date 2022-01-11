@@ -1,13 +1,7 @@
 import { Fragment } from 'react'
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  useSubscription,
-  gql
-} from '@apollo/client'
+import { useQuery, gql } from '@apollo/client'
 import LaunchItem from './LaunchItem'
+import MissionKey from './MissionKey'
 
 const LAUNCHES_QUERY = gql`
   query LaunchesQuery {
@@ -30,9 +24,15 @@ const Launches = () => {
   return (
     <>
       <h1 className='display-4 my-3'>Launches</h1>
-      {data?.launches?.map((launch, idx) => (
-        <LaunchItem key={`${launch.launch_number}-${idx}`} launch={launch} />
-      ))}
+      <MissionKey />
+      {[...data?.launches]
+        .sort(
+          (a, b) =>
+            Date.parse(b.launch_date_local) - Date.parse(a.launch_date_local)
+        )
+        .map((launch, idx) => (
+          <LaunchItem key={`${launch.launch_number}-${idx}`} launch={launch} />
+        ))}
     </>
   )
 }
