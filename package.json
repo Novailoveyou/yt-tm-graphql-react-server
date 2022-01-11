@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "server": "nodemon index",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
   "homepage": "https://github.com/Novailoveyou/yt-tm-graphql-react-spacex-launches#readme",
   "dependencies": {
     "axios": "^0.24.0",
+    "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "express-graphql": "^0.12.0",
     "graphql": "^16.2.0"
